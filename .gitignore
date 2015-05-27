@@ -1,0 +1,9 @@
+.directory
+ARL/ARL/bin/
+ARL/ARL/obj/
+#User Specific
+*.userprefs
+*.usertasks
+#Mono Project Files
+*.pidb
+*.resources
