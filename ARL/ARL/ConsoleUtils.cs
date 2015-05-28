@@ -8,7 +8,7 @@ namespace ARL
         { 
             ConsoleColor defaultColor = ConsoleColor.Gray;
             Console.ForegroundColor = defaultColor;
-            int index = -1;
+            int index;
             try
             {
                 index = text.IndexOf(toHighlight);
