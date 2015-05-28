@@ -7,7 +7,7 @@ namespace ARL
     public class ConsoleUtilsTest
     {
         [Test()]
-        public void TestMaxSubs()
+        public void TestHighlightAndWrite()
         {
             Assert.That(() => ConsoleUtils.HighlightAndWrite("jokjo00000kijii", "00000"), Throws.Nothing);
             Assert.That(() => ConsoleUtils.HighlightAndWrite("jijijijijiji", "00000"), Throws.Nothing);

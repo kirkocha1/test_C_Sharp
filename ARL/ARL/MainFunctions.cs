@@ -56,9 +56,15 @@ namespace ARL
             try
             {
                 amount = int.Parse(n);
-                if (amount < 0)
+                if (amount <= 0)
                 {
-                    Console.WriteLine("The input value is smaller then zero");
+                    Console.WriteLine("The input value is equal or smaller then zero");
+                    return 1;
+                }
+                if (amount == 1)
+                {
+                    Console.WriteLine("The input value is equal to 1, nothing to compare");
+                    return 1;
                 }
             }
             catch (Exception e)

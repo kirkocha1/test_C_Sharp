@@ -5,30 +5,29 @@ namespace ARL
 {
     public class ListFormat
     {
-        public static bool Hyphen(String s)
+        public static bool Hyphen(string s)
         {
             return s.Contains("-");
         }
 
         //find the longest elements in List
-        public static List<String> BiggestStrings(List<String> fList)
+        public static List<string> BiggestStrings(List<string> fList)
         {
-            List<String> result = new List<string>();
+            List<string> result = new List<string>();
             if (fList.Count == 0)
             {
                 return result;
             }
             else
             {
-            List<String> workList = fList;
             int k = 1;
-            workList.Sort(new StringComparator());
-            result.Add(workList[0]);
-            while (k < workList.Count)
+            fList.Sort(new StringComparator());
+                result.Add(fList[0]);
+            while (k < fList.Count)
             {
-                if (workList[k].Length == workList[0].Length)
+                if (fList[k].Length == fList[0].Length)
                 {
-                    result.Add(workList[k]);
+                    result.Add(fList[k]);
                     k++;
                 }
                 else
@@ -41,11 +40,11 @@ namespace ARL
         }
 
         //find list of common substrings between two strings
-        public static HashSet<String> CommonSubstrings(string str1, string str2)
+        public static HashSet<string> CommonSubstrings(string str1, string str2)
         {
             if (String.IsNullOrEmpty(str1) || String.IsNullOrEmpty(str2))
-                return new HashSet<String>();
-            HashSet<String> results = new HashSet<String>();
+                return new HashSet<string>();
+            HashSet<String> results = new HashSet<string>();
             List<int[]> num = new List<int[]>();
             String result = "";
             int maxlen = 0;

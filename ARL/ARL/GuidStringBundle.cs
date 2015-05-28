@@ -6,9 +6,9 @@ namespace ARL
     public class GuidStringBundle
     {
 
-        private List<String> fullList = new List<String>();
+        private List<string> fullList = new List<string>();
 
-        public List<String> FullList
+        public List<string> FullList
         {
             get
             {
@@ -27,28 +27,27 @@ namespace ARL
 
         public GuidStringBundle(int n)
         {
-            foreach (Guid guid in MainFunctions.Guids(n))
+            for (int i = 0; i < n; i++)
             {
-                fullList.Add(guid.ToString());
+                fullList.Add(Guid.NewGuid().ToString());
             }
-
         }
         //find the list of common substrings for the amount of the minimum of two strings
-        public List<String> GetRepeatingStrings()
+        public List<string> GetRepeatingStrings()
         {
-            HashSet<String> results = new HashSet<String>();
+            HashSet<String> results = new HashSet<string>();
             for (int i = 0; i < fullList.Count; i++)
             {
                 for (int j = fullList.Count - 1; j > 0 + i; j--)
                 {
-                    HashSet<String> temporaryResult = ListFormat.CommonSubstrings(fullList[i], fullList[j]);
-                    foreach (String s in temporaryResult)
+                    HashSet<string> temporaryResult = ListFormat.CommonSubstrings(fullList[i], fullList[j]);
+                    foreach (string s in temporaryResult)
                     {
                         results.Add(s);
                     }
                 }
             }
-            return new List<String>(results);
+            return new List<string>(results);
         }
     }
 }
